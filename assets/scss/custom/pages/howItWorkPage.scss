@@ -1,0 +1,58 @@
+.howItworksPage{
+    background-color: #175c04;
+    color: white;
+    .container1{
+        .sectionContainer{
+            width: 50%;
+            margin: auto;
+            margin-bottom: 50px;
+            padding: 50px 0;
+            p{
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            img{
+                border-radius: 20px;
+                width: 80%;
+                margin: 0 auto;
+                display: flex;
+            }
+            &.afterImg{
+                position: relative;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    width: 200px;
+                    height: 50px;
+                    top: 100%;
+                    background-image: url('https://images.squarespace-cdn.com/content/v1/62ced95d8db1400231af4c11/b7cdfb91-e0e4-4bff-b3c5-673ed43bad6e/White+Arrow.png?format=300w');
+                    background-repeat: no-repeat;
+                    margin-top: 10px;
+                    left: 47%;
+
+                }
+            }
+        }
+    }
+    .container2{
+        padding-top: 30px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        a{
+            transition: color .15s ease;
+            button{
+                width: 300px;
+                height: 70px;
+                border: solid #175c04 5px;
+                margin-bottom: 20px;
+                color: #175c04;
+                transition: all .5s ease;
+                &:hover {
+                    background-color: #175c04;
+                    color: white;
+                }
+}
+            }
+        }
+}

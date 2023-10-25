@@ -1,0 +1,117 @@
+.fooditudePage{
+    background-color: #175c04;
+    .headingContainer{
+        padding: 20px;
+        .imageHeading{
+            
+            display: flex;
+            align-items: center;
+            width: 50%;
+            border-bottom: 1px solid white;
+
+            img{
+                width: 50px;
+                height: 50px;
+            }
+            h1{
+                color: white;
+                margin-top: 0;
+            }
+        }
+        .subHeading{
+            h2{
+                color: white;
+            }
+        }
+        }
+    .containerWhite{
+        background-color: white;
+        display: flex;
+    flex-direction: column;
+    
+    padding: 40px 0;
+    .containerImgDesc{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        justify-content: space-between;
+        p{
+            font-size: 1.8rem;
+            color: #175c04;
+        }
+        &:first-child img {
+            width: 40%;
+            height: 40%;
+            margin: 0 0 0 10%;
+          }
+          
+          &:last-child img {
+            width: 40%;
+            height: 40%;
+            margin: 0 10% 0 0;
+          }
+    }
+    }
+    .containerImgDesc{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        justify-content: space-between;
+        padding: 70px 20px;
+    
+        p{
+            color: white;
+            font-size: 1.8rem;
+        }
+        img {
+            width: 40%;
+            height: 40%;
+            margin: 0 0 0 10%;
+          }
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .fooditudePage{
+        .headingContainer{
+            margin: 23px 20px;
+        border-bottom: 1px solid white;
+    .imageHeading{
+        justify-content: space-between;
+        width: 100%;
+        flex-direction: row-reverse;
+        border-bottom: 0px;
+    }
+    
+        }
+        .containerWhite{
+            .containerImgDesc{
+                flex-direction: column;
+                &:nth-child(2){
+                    flex-direction: column-reverse;
+                }
+                p{
+                    font-size: 1.3rem;
+                }
+                &:first-child img {
+                    margin: auto;
+                  }
+                  
+                  &:last-child img {
+                    margin: auto;
+                  }
+                
+                
+            }
+        }
+        .containerImgDesc{
+            flex-direction: column;
+            p{
+                font-size: 1.3rem;
+    
+            }
+        }
+    }
+    
+    }

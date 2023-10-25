@@ -1,0 +1,93 @@
+.faqPage {
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #175c04;
+        color: white;
+        h2,
+        h3 {
+            color: white;
+            font-size: 1.3rem;
+        }
+        &.white {
+            background-color: white;
+            color: #175c04;
+            h2,
+            h3 {
+                color: #175c04;
+                font-size: 1.3rem;
+            }
+            .mainHeading {
+                h2 {
+                    font-size: 1.6rem;
+                }
+            }
+            .questions {
+                ul {
+                    li {
+                        border-bottom: 1px solid #175c04;
+                        .question {
+                            .arrow {
+                                img {
+                                    filter: invert(0);
+                                    max-width: 20px;
+                                    &.rotate-up {
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mainHeading {
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+        .questions {
+            width: 100%;
+            ul {
+                list-style-type: none;
+                li {
+                    border-bottom: 1px solid white;
+                    .answer {
+                        display: none;
+                        p,
+                        h3,
+                        ul {
+                            text-align: center;
+                        }
+                    }
+                    .question {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .arrow {
+                            display: inline-block;
+                            // transform: rotate(90deg);
+                            margin-bottom: -15px;
+                            transform-origin: center bottom;
+                            cursor: pointer;
+                            &.active {
+                                transform: rotate(90deg);
+                            }
+                            img {
+                                filter: invert(1);
+                                max-width: 20px;
+                                &.rotate-up {
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

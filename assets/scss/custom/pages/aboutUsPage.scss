@@ -1,0 +1,92 @@
+.aboutUsPage{
+    background-color: #175c04;
+    color: white;
+    h2,h3, a{
+        color: white;
+    }
+    .container{
+        padding: 50px;
+        width: 80%;
+        margin: auto;
+        h2,p{
+            text-align: center;
+            padding: 20px 0;
+        }
+    }
+    .container2{
+        width: 80%;
+        margin: auto;
+        h2{
+            text-align: center;    
+        }
+        img{
+            margin: auto;
+            border-radius: 20px;
+        }
+        .subContainer{
+            .firstContainer{
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+                width: 50%;
+                margin: auto;
+                img{
+                    width: 100%;
+                }
+                h3,p{
+                    text-align: left;
+                }
+                a{
+                    display: flex;
+                    text-decoration: underline;
+                }
+            }
+            .secContainer{
+                display: flex;
+                justify-content: space-between;
+                
+                div{
+                    padding: 20px;
+                    a{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    &.delivery-information-page {
+        padding-bottom: 30px;
+        .container{
+            padding-bottom: 30px;
+        }
+        .container2{
+            h2,p{
+                text-align: center;
+                padding: 20px 0;
+                margin-bottom: 0;
+            }
+        }
+        a {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .aboutUsPage{
+        .container2{
+            .subContainer{
+                .firstContainer{
+                    width: 80%;
+                }
+                .secContainer{
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}

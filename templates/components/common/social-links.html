@@ -1,0 +1,16 @@
+{{#if social_media}}
+    <ul class="socialLinks socialLinks--alt">
+        {{#each social_media}}
+            <li class="socialLinks-item">
+                <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank" rel="noopener">
+                    <svg><use xlink:href="#icon-{{display_name}}" /></svg>
+                </a>
+            </li>
+        {{/each}}
+        <li class="socialLinks-item">
+            <a class="icon icon--Email" href="mailto:hello@angrymonk.co.uk" target="_blank" rel="noopener">
+               <img src="https://cdn11.bigcommerce.com/s-gy4celaekj/images/stencil/original/image-manager/envelope-regular-svg.png?t=1694090293&_gl=1*1v5ylwy*_ga*Mjk4MjM4NDEyLjE2ODg5NzM1ODU.*_ga_WS2VZYPC6G*MTY5NDA4OTI1MS44Ni4xLjE2OTQwODk2MjYuNDcuMC4w" alt="">
+            </a>
+        </li>
+    </ul>
+{{/if}}
