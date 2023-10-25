@@ -1,5 +1,6 @@
 
 import utils from '@bigcommerce/stencil-utils';
+import { async } from 'regenerator-runtime';
 
 if (document.querySelectorAll(".category-products").length) {
   $(".category-products").each(function () {
@@ -47,32 +48,54 @@ if (document.querySelectorAll(".category-products").length) {
   });
 }
 
-function addCustomCart() {
+async function addCustomCart() {
   var buttons = document.querySelectorAll(".card-button");
 
   if (buttons) {
     buttons.forEach(function (button) {
-      button.addEventListener("click", function (e) {
-        e.preventDefault();
-        const productSku = button.getAttribute("data-product-sku");
-        var url_add = '/cart.php';
-        // Make an AJAX POST request to add the product to the cart
-        $.ajax({
-          url: url_add,
-          data: `action=add&sku=${productSku}&qty=1`,
-          dataType: 'json',
-          async :false,
-          type: "POST",
-          success: function(response) {
-            console.log(response)
-          }
-      });
-      utils.api.cart.getCartQuantity({}, (err, response) => {
-        response ? document.querySelector('.cart-quantity.countPill--positive').innerText = response : console.log(err)
-      });
+      button.addEventListener("click", async (e) => {
+        try {
+          // Change the button text to "added"
+          button.innerText = "added";
+
+          const productSku = button.getAttribute("data-product-sku");
+          e.preventDefault();
+
+          // Delay the function call slightly to allow the text change to be reflected
+          setTimeout(async () => {
+            // Assuming addToCart is an asynchronous function
+            await addToCart(productSku);
+            button.innerText = "ADD TO CART";
+          }, 100); // You can adjust the delay as needed
+        } catch (error) {
+          console.error("An error occurred:", error);
+          // Handle the error as needed
+        }
       });
     });
   }
 }
+
+
+function addToCart (productSku){
+  var url_add = '/cart.php';
+  $.ajax({
+    url: url_add,
+    data: `action=add&sku=${productSku}&qty=1`,
+    dataType: 'json',
+    async :false,
+    type: "POST",
+    success: function(response) {
+      console.log(response)
+    }
+});
+  
+utils.api.cart.getCartQuantity({}, (err, response) => {
+  response ? document.querySelector('.cart-quantity.countPill--positive').innerText = response : console.log(err)
+});
+}
+
+
+
 
 addCustomCart();
